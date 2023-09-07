@@ -46,9 +46,9 @@ This project is not open for contributions. All rights reserved.
 
 ### MIT License
 
-[MIT License](LICENSE.md)
+[MIT License](LICENSE)
 
-CampusWeatherInsight is licensed under the MIT License. You are free to use, modify, and distribute the software within the terms and conditions specified in the [MIT License](LICENSE.md) file.
+CampusWeatherInsight is licensed under the MIT License. You are free to use, modify, and distribute the software within the terms and conditions specified in the [MIT License](LICENSE) file.
 
 
 ## Contact
