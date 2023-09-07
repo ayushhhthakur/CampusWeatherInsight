@@ -42,13 +42,8 @@ Stay tuned for updates as we work on implementing these exciting AI/ML enhanceme
 
 ## License
 
+CampusWeatherInsight is released under a custom [License](LICENSE) with strict terms and conditions.
 This project is not open for contributions. All rights reserved.
-
-### License
-
-[License](LICENSE)
-
-CampusWeatherInsight is released under a custom license with strict terms and conditions.
 
 
 ## Contact
