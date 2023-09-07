@@ -44,11 +44,11 @@ Stay tuned for updates as we work on implementing these exciting AI/ML enhanceme
 
 This project is not open for contributions. All rights reserved.
 
-### MIT License
+### License
 
-[MIT License](LICENSE)
+[License](LICENSE)
 
-CampusWeatherInsight is licensed under the MIT License. You are free to use, modify, and distribute the software within the terms and conditions specified in the [MIT License](LICENSE) file.
+CampusWeatherInsight is released under a custom license with strict terms and conditions.
 
 
 ## Contact
