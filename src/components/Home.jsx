@@ -25,11 +25,11 @@ const Home = () => {
     <div>
       <h1>Real-Time Weather Data</h1>
       {loading ? (
-        <p>Loading weather data...</p>
+        <p className="loading-message">Loading weather data...</p>
       ) : error ? (
-        <p>Error fetching weather data</p>
+        <p className="error-message">Error fetching weather data</p>
       ) : (
-        <div>
+        <div className="weather-data">
           <p>Temperature: {weatherData.temp}°C</p>
           <p>AQI: {weatherData.aqi}</p>
           <p>Humidity: {weatherData.humidity}%</p>
