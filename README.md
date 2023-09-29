@@ -24,9 +24,9 @@ CampusWeatherInsight is a specialized weather web application tailored exclusive
 
 ## Usage
 
-CampusWeatherInsight is exclusively available for Model Institute of Engineering and Technology (MIET), Jammu. To access real-time weather information and forecasts for your campus, simply visit the website at [https://www.campusweatherinsight.com](https://www.campusweatherinsight.com) currently under construction.
+CampusWeatherInsight is exclusively available for Model Institute of Engineering and Technology (MIET), Jammu. To access real-time weather information and forecasts for your campus, simply visit the website at [https://www.campusweatherinsight.com](https://www.campusweatherinsight.com) (currently under construction).
 
-1. Go to [https://www.campusweatherinsight.com](https://www.campusweatherinsight.com).
+1. Go to [https://www.campusweatherinsight.com](https://www.campusweatherinsight.com) (currently under construction).
 2. Enter your campus location details or use GPS coordinates.
 3. Explore real-time weather data, forecasts, and alerts tailored to your campus.
 4. Stay informed and prepared for any weather conditions specific to your institute's location.
