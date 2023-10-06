@@ -8,7 +8,7 @@ const Home = () => {
 
   useEffect(() => {
     // Replace with the URL of your server endpoint that fetches weather data.
-    const apiUrl = '/api/weather';
+    const apiUrl = '/api/weather'; //fetch from env
 
     fetch(apiUrl)
       .then((response) => {
