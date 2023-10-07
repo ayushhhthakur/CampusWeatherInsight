@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer style={footerStyle}>
-      <p>&copy; {new Date().getFullYear()} Campur Weather Insight. Designed by <a href="https://github.com/ayushhhthakur" target="_blank" style={footerAnchor} rel="noopener noreferrer">Ayush Thakur</a></p>
+      <p>&copy; {new Date().getFullYear()} Campur Weather Insight. Designed by <a href="https://github.com/ayushhhthakur" target="_blank" style={footerAnchor} rel="noopener noreferrer">Ayush.</a></p>
     </footer>
   );
 };
