@@ -1,60 +1,61 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/Home.css';
 
-const Home = () => {
+const Dashboard = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const apiUrl = '/api/weather';
+    const fetchData = async () => {
+      const url = 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Kishtwar';
+      const options = {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key': '7b3b076a32mshc6d4e9b62e1ca07p146a55jsnbc870d1b777c',
+          'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com',
+        },
+      };
 
-    fetch(apiUrl)
-      .then((response) => {
+      try {
+        const response = await fetch(url, options);
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error(`Request failed with status: ${response.status}`);
         }
-        return response.json();
-      })
-      .then((data) => {
-        setWeatherData(data);
+
+        const result = await response.json();
+        setWeatherData(result);
+      } catch (error) {
+        setError(error.message);
+      } finally {
         setLoading(false);
-      })
-      .catch((err) => {
-        // Check if the response is HTML
-        if (err.message.startsWith('Unexpected token <')) {
-          setError('Invalid response format. Please check the API.');
-        } else {
-          setError(err.message);
-        }
-        setLoading(false);
-      });
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (
-    <div className="weather-container">
-      <h1 className="weather-title">Real-Time Weather Data</h1>
-      <div className={`weather-card ${loading ? 'loading' : ''}`}>
-        {loading ? (
-          <p className="loading-message">Loading weather data...</p>
-        ) : error ? (
-          <p className="error-message">Error: {error}</p>
-        ) : (
-          <>
-            <div className="weather-data">
-              <p>Temperature: {weatherData.temp}°C</p>
-              <p>AQI: {weatherData.aqi}</p>
-              <p>Humidity: {weatherData.humidity}%</p>
-              {/* Add more weather data fields as needed */}
-            </div>
-            <div className="weather-image-3d">
-              {/* Add 3D weather visualization here */}
-            </div>
-          </>
-        )}
-      </div>
+    <div>
+      <h1>Dashboard</h1>
+      {loading && <p>Loading weather data...</p>}
+      {error && <p>Error: {error}</p>}
+      {weatherData && (
+        <div>
+          <h2>Weather Data:</h2>
+          <p>Clouds: {weatherData.cloud_pct}%</p>
+          <p>Temperature: {weatherData.temp}°C</p>
+          <p>Feels Like: {weatherData.feels_like}°C</p>
+          <p>Humidity: {weatherData.humidity}%</p>
+          <p>Min Temperature: {weatherData.min_temp}°C</p>
+          <p>Max Temperature: {weatherData.max_temp}°C</p>
+          <p>Wind Speed: {weatherData.wind_speed} m/s</p>
+          <p>Wind Degrees: {weatherData.wind_degrees}°</p>
+          <p>Sunrise: {new Date(weatherData.sunrise * 1000).toLocaleTimeString()}</p>
+          <p>Sunset: {new Date(weatherData.sunset * 1000).toLocaleTimeString()}</p>
+        </div>
+      )}
     </div>
   );
 };
 
-export default Home;
+export default Dashboard;

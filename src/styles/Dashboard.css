@@ -1,0 +1,39 @@
+/* Add this CSS to your stylesheet or component */
+
+/* Style for the entire Dashboard component */
+div {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for the heading */
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Style for the weather data container */
+  .weather-container {
+    margin-top: 20px;
+  }
+  
+  /* Style for the Weather Data heading */
+  .weather-heading {
+    font-size: 1.5rem;
+    color: #555;
+  }
+  
+  /* Style for the preformatted text */
+  pre {
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  

@@ -1,32 +1,34 @@
-import React from 'react';
-import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
-import Dashboard from './pages/Dashboard.jsx';
-import About from './pages/About.jsx';
-import Analytics from './pages/Analytics.jsx';
-import Comment from './pages/Comment.jsx';
-import Forecast from './pages/Forecast.jsx';
-import Predictions from './pages/Predictions.jsx';
-import Footer from './components/Footer';
+import "./App.css";
+import SideBar from "./components/Sidebar/SideBar";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-const App = () => {
+import Dashboard from "./pages/Dashboard";
+import Users from "./pages/Users";
+import Messages from "./pages/Messages";
+import FileManager from "./pages/FileManager";
+import Analytics from "./pages/Analytics";
+import Order from "./pages/Order";
+import Saved from "./pages/Saved";
+import Setting from "./pages/Setting";
+function App() {
   return (
-    <BrowserRouter>
-      <Sidebar>
+    <Router>
+      <SideBar>
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/comment" element={<Comment />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/messages" element={<Messages />} />
           <Route path="/analytics" element={<Analytics />} />
-          <Route path="/forecast" element={<Forecast />} />
-          <Route path="/predictions" element={<Predictions />} />
+          <Route path="/file-manager" element={<FileManager />} />
+          <Route path="/order" element={<Order />} />
+          <Route path="/saved" element={<Saved />} />
+          <Route path="/settings" element={<Setting />} />
+
+          <Route path="*" element={<> not found</>} />
         </Routes>
-      </Sidebar>
-      <Footer />
-    </BrowserRouter>
+      </SideBar>
+    </Router>
   );
-};
+}
 
 export default App;
