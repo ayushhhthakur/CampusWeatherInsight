@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Home.css'; // Import your CSS file for styling
+import '../styles/Home.css';
 
 const Home = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -7,8 +7,7 @@ const Home = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Replace with the URL of your server endpoint that fetches weather data.
-    const apiUrl = '/api/weather'; //fetch from env
+    const apiUrl = '/api/weather';
 
     fetch(apiUrl)
       .then((response) => {
@@ -22,7 +21,12 @@ const Home = () => {
         setLoading(false);
       })
       .catch((err) => {
-        setError(err.message);
+        // Check if the response is HTML
+        if (err.message.startsWith('Unexpected token <')) {
+          setError('Invalid response format. Please check the API.');
+        } else {
+          setError(err.message);
+        }
         setLoading(false);
       });
   }, []);
