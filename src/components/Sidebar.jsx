@@ -31,13 +31,13 @@ const Sidebar = ({ children }) => {
       icon: <FaComments />,
     },
     {
-      path: '/product',
+      path: '/forecast',
       name: 'Forecast',
       icon: <FaSun />,
     },
     {
-      path: '/productList',
-      name: 'Forecast List',
+      path: '/predictions',
+      name: 'Predictions',
       icon: <FaList />,
     },
   ];
