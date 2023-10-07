@@ -1,3 +1,4 @@
+// Footer.jsx
 import React from 'react';
 
 const Footer = () => {
@@ -13,14 +14,14 @@ const footerStyle = {
   color: '#fefefe',
   textAlign: 'center',
   padding: '1rem',
-  position: 'absolute',
+  position: 'fixed',
   bottom: '0',
   width: '100%',
 };
 
 const footerAnchor = {
-    color: '#fefefe',
-    textDecoration: 'underline',
+  color: '#fefefe',
+  textDecoration: 'underline',
 };
 
 export default Footer;
