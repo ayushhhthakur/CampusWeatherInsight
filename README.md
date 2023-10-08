@@ -1,6 +1,5 @@
 # CampusWeatherInsight
 
-![CampusWeatherInsight Logo]
 <a href="https://ibb.co/ChpQ0xd"><img src="https://i.ibb.co/ZWRxTys/Homepage.png" alt="Homepage" border="0"></a>
 
 CampusWeatherInsight is a specialized weather web application tailored exclusively for Model Institute of Engineering and Technology ([MIET](https://mietjmu.in)), Jammu. It provides real-time and forecasted weather information specific to your campus's location, helping students, faculty, and staff stay informed and prepared for any weather conditions.
