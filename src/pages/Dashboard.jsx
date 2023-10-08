@@ -42,7 +42,7 @@ const Dashboard = () => {
     <div className='main-content'>
       <h1>Dashboard</h1>
       <div className='dashboard'>
-        {loading && <p className="loading">Loading weather data...</p>}
+        {loading && <p className="loading...">Loading weather data....</p>}
         {error && <p className="error">Error: {error}</p>}
         {weatherData && (
           <div className='weather-data'>

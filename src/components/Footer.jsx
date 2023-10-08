@@ -1,27 +1,14 @@
-// Footer.jsx
+// Footer.js
+
 import React from 'react';
+import '../styles/Footer.css';
 
 const Footer = () => {
-  return (
-    <footer style={footerStyle}>
-      <p>&copy; {new Date().getFullYear()} Campur Weather Insight. Designed by <a href="https://github.com/ayushhhthakur" target="_blank" style={footerAnchor} rel="noopener noreferrer">Ayush.</a></p>
-    </footer>
-  );
-};
-
-const footerStyle = {
-  backgroundColor: '#11101b',
-  color: '#fefefe',
-  textAlign: 'center',
-  padding: '1rem',
-  position: 'fixed',
-  bottom: '0',
-  width: '100%',
-};
-
-const footerAnchor = {
-  color: '#fefefe',
-  textDecoration: 'underline',
-};
+    return (
+        <div className="footer-container main-content">
+            <p>&copy; 2023 Campus Weather Insight. Designed by <a target='_blank' href='https://ayush-thakur.netlify.app'>Ayush</a>.</p>
+        </div>
+    );
+}
 
 export default Footer;

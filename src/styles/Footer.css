@@ -1,0 +1,34 @@
+/* GlobalStyles.css */
+@import url('./GlobalStyles.css');
+
+/* Footer.css */
+
+.main-content {
+    margin-left: 250px; /* Adjust based on your sidebar width */
+    padding: 20px; /* Add padding for better spacing */
+    transition: margin 0.3s ease; /* Smooth transition effect */
+}
+
+.footer-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f8f8; /* Set your preferred background color */
+    padding: 15px;
+    text-align: center;
+}
+
+.footer-container p {
+    margin: 0;
+    text-align: justify;
+    margin-left: 20%;
+}
+
+.footer-container a {
+    color: #007bff; /* Set your preferred link color */
+    text-decoration: none;
+}
+
+.footer-container a:hover {
+    text-decoration: underline;
+}

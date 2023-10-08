@@ -43,7 +43,7 @@
 .error {
   font-size: 18px;
   margin-top: 20px;
-  color: #ff6347; /* Tomato color for error */
+  color: #ff6347;
 }
 
 .loading::before {

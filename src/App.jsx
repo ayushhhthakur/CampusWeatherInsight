@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Sidebar from './components/Sidebar';
+import Footer from './components/Footer';
 import 'boxicons/css/boxicons.min.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
@@ -24,6 +25,7 @@ function App() {
             <Route path="*" element={<div>Not found</div>} />
           </Routes>
         </div>
+        <Footer />
       </div>
     </Router>
   );
