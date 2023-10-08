@@ -4,7 +4,9 @@ import '../styles/GlobalStyles.css'
 
 const Forecast = () => {
   return (
-    <div className='main-content'>Forecast</div>
+    <div className='main-content'>
+      <h1>Forecast</h1>
+    </div>
   )
 }
 

@@ -4,7 +4,9 @@ import '../styles/GlobalStyles.css'
 
 const Settings = () => {
   return (
-    <div className='main-content'>Settings</div>
+    <div className='main-content'>
+      <h1>Settings</h1>
+    </div>
   )
 }
 
