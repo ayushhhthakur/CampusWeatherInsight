@@ -1,0 +1,11 @@
+import React from 'react'
+import "../styles/About.css"
+import '../styles/GlobalStyles.css'
+
+const About = () => {
+  return (
+    <div className='main-content'>About</div>
+  )
+}
+
+export default About

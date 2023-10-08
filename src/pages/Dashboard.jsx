@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import "../styles/Dashboard.css"
+import '../styles/GlobalStyles.css'
+
+
 
 const Dashboard = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -35,12 +39,13 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div>
+    <div className='main-content'>
       <h1>Dashboard</h1>
+    <div className='dashboard'>
       {loading && <p>Loading weather data...</p>}
       {error && <p>Error: {error}</p>}
       {weatherData && (
-        <div>
+        <div className='weather-data'>
           <h2>Weather Data:</h2>
           <p>Clouds: {weatherData.cloud_pct}%</p>
           <p>Temperature: {weatherData.temp}°C</p>
@@ -54,6 +59,7 @@ const Dashboard = () => {
           <p>Sunset: {new Date(weatherData.sunset * 1000).toLocaleTimeString()}</p>
         </div>
       )}
+    </div>
     </div>
   );
 };

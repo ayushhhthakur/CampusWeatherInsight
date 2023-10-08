@@ -1,0 +1,116 @@
+@import url('./GlobalStyles.css');
+
+/* Analytics Styles */
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  
+  .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  
+  .card {
+    border: none;
+    margin-bottom: 20px;
+  }
+  
+  .card-header {
+    background-color: var(--primary-color-light);
+    border-bottom: none;
+  }
+  
+  .card-body {
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .list-unstyled {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .list-unstyled li {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+  
+  .btn-outline-primary:hover {
+    color: #fff;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  /* Compare Plans Section */
+  .display-6 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+  }
+  
+  .table thead th {
+    border-top: none;
+  }
+  
+  .table th,
+  .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #e2e8f0;
+  }
+  
+  .table th {
+    text-align: center;
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .bi {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    fill: currentColor;
+  }
+  
+  .check-marked {
+    color: #28a745;
+  }
+  
