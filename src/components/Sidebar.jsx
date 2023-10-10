@@ -11,13 +11,13 @@ const Sidebar = () => {
     document.body.classList.toggle('dark', isDarkMode);
   }, [isDarkMode]);
 
-  const toggleSidebar = () => {
-    setSidebarClosed(!isSidebarClosed);
-  };
+  // const toggleSidebar = () => {
+  //   setSidebarClosed(!isSidebarClosed);
+  // };
 
-  const openSidebarOnSearch = () => {
-    setSidebarClosed(false);
-  };
+  // const openSidebarOnSearch = () => {
+  //   setSidebarClosed(false);
+  // };
 
   const toggleDarkMode = () => {
     setDarkMode(!isDarkMode);
