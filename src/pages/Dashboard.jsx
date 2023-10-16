@@ -3,7 +3,7 @@ import '../styles/Dashboard.css';
 import '../styles/GlobalStyles.css';
 
 const Dashboard = () => {
-  const [weatherData, setWeatherData] = useState([]);
+  const [weatherData, setWeatherData] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -28,7 +28,6 @@ const Dashboard = () => {
         console.log('result:', result);
 
         setWeatherData(result);
-        console.log('weatherData:', weatherData);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -45,47 +44,41 @@ const Dashboard = () => {
       <div className="dashboard">
         {loading && <p className="loading...">Loading weather data....</p>}
         {error && <p className="error">Error: {error}</p>}
-        {weatherData.length > 0 && (
+        {Object.keys(weatherData).length > 0 && (
           <div className="weather-data">
             <h2>Weather Data:</h2>
-            {weatherData.map((dayData, index) => (
-              <div key={index} className="data-row">
-                <div className="data-column">
-                  <p>Date: {dayData.date}</p>
-                </div>
-                <div className="data-column">
-                  <p>Temperature: {dayData.temp}°C</p>
-                </div>
-                <div className="data-column">
-                  <p>Feels Like: {dayData.feels_like}°C</p>
-                </div>
-                <div className="data-column">
-                  <p>Cloud Percentage: {dayData.cloud_pct}%</p>
-                </div>
-                <div className="data-column">
-                  <p>Humidity: {dayData.humidity}%</p>
-                </div>
-                <div className="data-column">
-                  <p>Max Temperature: {dayData.max_temp}°C</p>
-                </div>
-                <div className="data-column">
-                  <p>Min Temperature: {dayData.min_temp}°C</p>
-                </div>
-                <div className="data-column">
-                  <p>Sunrise: {new Date(dayData.sunrise * 1000).toLocaleTimeString()}</p>
-                </div>
-                <div className="data-column">
-                  <p>Sunset: {new Date(dayData.sunset * 1000).toLocaleTimeString()}</p>
-                </div>
-                <div className="data-column">
-                  <p>Wind Degrees: {dayData.wind_degrees}</p>
-                </div>
-                <div className="data-column">
-                  <p>Wind Speed: {dayData.wind_speed}</p>
-                </div>
-                {/* ... other weather details */}
+            <div className="data-row">
+              <div className="data-column">
+                <p>Temperature: {weatherData.temp}°C</p>
               </div>
-            ))}
+              {/* <div className="data-column">
+                <p>Feels Like: {weatherData.feels_like}°C</p>
+              </div> */}
+              <div className="data-column">
+                <p>Cloud Percentage: {weatherData.cloud_pct}%</p>
+              </div>
+              <div className="data-column">
+                <p>Humidity: {weatherData.humidity}%</p>
+              </div>
+              <div className="data-column">
+                <p>Max Temperature: {weatherData.max_temp}°C</p>
+              </div>
+              <div className="data-column">
+                <p>Min Temperature: {weatherData.min_temp}°C</p>
+              </div>
+              <div className="data-column">
+                <p>Sunrise: {new Date(weatherData.sunrise * 1000).toLocaleTimeString()}</p>
+              </div>
+              <div className="data-column">
+                <p>Sunset: {new Date(weatherData.sunset * 1000).toLocaleTimeString()}</p>
+              </div>
+              <div className="data-column">
+                <p>Wind Degrees: {weatherData.wind_degrees}</p>
+              </div>
+              <div className="data-column">
+                <p>Wind Speed: {weatherData.wind_speed}</p>
+              </div>
+            </div>
           </div>
         )}
       </div>
