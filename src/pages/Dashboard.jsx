@@ -8,28 +8,28 @@ const Dashboard = () => {
   const [error, setError] = useState(null);
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const url = 'src/data/data.json';
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const url = 'src/data/data.json';
 
-      try {
-        const response = await fetch(url);
+  //     try {
+  //       const response = await fetch(url);
 
-        if (!response.ok) {
-          throw new Error(`Request failed with status: ${response.status}`);
-        }
+  //       if (!response.ok) {
+  //         throw new Error(`Request failed with status: ${response.status}`);
+  //       }
 
-        const result = await response.json();
-        setWeatherData(result);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+  //       const result = await response.json();
+  //       setWeatherData(result);
+  //     } catch (error) {
+  //       setError(error.message);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   // Filter data based on the selected date
   const filteredData = weatherData?.filter((dayData) => dayData.date === selectedDate);
