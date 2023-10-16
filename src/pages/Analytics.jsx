@@ -50,8 +50,8 @@ const Analytics = () => {
                 <small className="text-body-secondary fw-light">°C</small>
               </h1>
               <ul className="list-unstyled mt-3 mb-4">
-                <li>{loading ? 'Loading...' : `${weatherData?.city || 'N/A'}`}</li>
-                <li>{loading ? 'Loading...' : `${weatherData?.date || 'N/A'}`}</li>
+                <li> Clouds: {loading ? 'Loading...' : `${weatherData?.cloud_pct || 'N/A'}`} %</li>
+                <li>Min Temp: {loading ? 'Loading...' : `${weatherData?.min_temp || 'N/A'}`} °C</li>
                 {/* Add other weather-related information here */}
               </ul>
               <button type="button" className="w-100 btn btn-lg btn-primary">
