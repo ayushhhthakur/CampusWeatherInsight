@@ -9,7 +9,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Jammu';
+      const url = 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Jammu'; //Fetching data through rapid api for testing. Change to custom api for production.
       const options = {
         method: 'GET',
         headers: {
