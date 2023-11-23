@@ -42,7 +42,7 @@ const Analytics = () => {
         <div className="col">
           <div className="card mb-4 rounded-3 shadow-sm">
             <div className="card-header py-3">
-              <h4 className="my-0 fw-normal">Weather</h4>
+              <h4 className="my-0 fw-normal">Temperature</h4>
             </div>
             <div className="card-body">
               <h1 className="card-title pricing-card-title">
