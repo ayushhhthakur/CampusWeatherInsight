@@ -48,8 +48,14 @@ const Sidebar = () => {
             </li> */}
             <li className="nav-links">
               <Link to="/">
-                <i className='bx bx-home-alt icon'></i>
-                <span className="text nav-text">Dashboard</span>
+                <i className='bx bxs-cloud icon'></i>
+                <span className="text nav-text">Weather</span>
+              </Link>
+            </li>
+            <li className="nav-links">
+              <Link to="/hydrophonic">
+                <i className='bx bxs-cloud icon'></i>
+                <span className="text nav-text">Hydorphonic</span>
               </Link>
             </li>
             <li className="nav-links">

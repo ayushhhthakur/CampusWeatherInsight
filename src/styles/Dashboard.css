@@ -1,64 +1,51 @@
+/* Import statements and other global styles */
 @import url('./GlobalStyles.css');
 
-
-/* Import statements and other global styles */
-
 /* Dashboard Styles */
-.dashboard {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+h1 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.dashboard h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
+.dashboard {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.loading {
+  color: #3498db;
+  font-size: 1.2em;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 1.2em;
 }
 
 .weather-data {
   margin-top: 20px;
 }
 
-.weather-data h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
 .data-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .data-column {
-  flex: 1;
-  margin: 5px;
+  width: calc(33.33% - 10px);
+  margin-bottom: 10px;
+  background-color: #fff;
   padding: 10px;
-  background-color: #f2f2f2;
   border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Loading and Error Messages */
-.loading,
-.error {
-  font-size: 18px;
-  margin-top: 20px;
-  color: #ff6347;
-}
-
-.loading::before {
-  content: "Loading... ";
-  display: inline-block;
-  animation: loading 1s infinite;
-}
-
-@keyframes loading {
-  0% { content: "Loading..."; }
-  50% { content: "Loading"; }
-  100% { content: "Loading..."; }
-}
-
-.error::before {
-  content: "Error: ";
-  font-weight: bold;
+.data-column p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #333;
 }
