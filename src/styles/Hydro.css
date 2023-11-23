@@ -1,0 +1,51 @@
+/* Import statements and other global styles */
+@import url('./GlobalStyles.css');
+
+/* Dashboard Styles */
+h1 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.hydro-dashboard {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.loading {
+  color: #3498db;
+  font-size: 1.2em;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 1.2em;
+}
+
+.hydro-data {
+  margin-top: 20px;
+}
+
+.data-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.data-column {
+  width: calc(33.33% - 10px);
+  margin-bottom: 10px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.data-column p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #333;
+}
