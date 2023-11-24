@@ -13,7 +13,7 @@ CampusWeatherInsight is a specialized weather web application tailored exclusive
 - [Acknowledgments](#acknowledgments)
 - [Contact](#contact)
 
-## Features
+## Upcoming Features
 
 - **Campus-Centric Weather Data:** Accurate and location-specific weather updates for your campus.
 - **Hourly and 7-Day Forecasts:** Plan your activities with detailed weather forecasts.
