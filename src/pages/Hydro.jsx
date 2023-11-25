@@ -4,15 +4,38 @@ import { getDatabase, ref, get, onValue } from 'firebase/database';
 import '../styles/GlobalStyles.css';
 import '../styles/Hydro.css';
 
+
 const firebaseConfig = {
-    apiKey: "AIzaSyApmcGF1t-mS3gqwb_cy08wUl9hQqLcinE",
-    authDomain: "hydrophonic-86c7e.firebaseapp.com",
-    databaseURL: "https://hydrophonic-86c7e-default-rtdb.firebaseio.com",
-    projectId: "hydrophonic-86c7e",
-    storageBucket: "hydrophonic-86c7e.appspot.com",
-    messagingSenderId: "226532801545",
-    appId: "1:226532801545:web:6fcfe119e973c75c078cd8"
-  };
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
+};
+
+// const firebaseConfig = {
+//   apiKey: process.env.FIREBASE_API_KEY,
+//   authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+//   databaseURL: process.env.FIREBASE_DATABASE_URL,
+//   projectId: process.env.FIREBASE_PROJECT_ID,
+//   storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+//   messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+//   appId: process.env.FIREBASE_APP_ID
+// };
+
+
+// const firebaseConfig = {
+//     apiKey: "AIzaSyApmcGF1t-mS3gqwb_cy08wUl9hQqLcinE",
+//     authDomain: "hydrophonic-86c7e.firebaseapp.com",
+//     databaseURL: "https://hydrophonic-86c7e-default-rtdb.firebaseio.com",
+//     projectId: "hydrophonic-86c7e",
+//     storageBucket: "hydrophonic-86c7e.appspot.com",
+//     messagingSenderId: "226532801545",
+//     appId: "1:226532801545:web:6fcfe119e973c75c078cd8"
+//   };
+
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
