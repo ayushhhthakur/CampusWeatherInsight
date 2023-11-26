@@ -16,6 +16,7 @@ import '../styles/Hydro.css';
 // };
 
 
+
 const firebaseConfig = {
     apiKey: "AIzaSyApmcGF1t-mS3gqwb_cy08wUl9hQqLcinE",
     authDomain: "hydrophonic-86c7e.firebaseapp.com",
