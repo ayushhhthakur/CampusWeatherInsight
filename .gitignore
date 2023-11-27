@@ -30,3 +30,8 @@ dist-ssr
 src/pages/Analytics.jsx
 src/pages/Dashboard.jsx
 src/styles/Dashboard.css
+
+
+# model folder
+model/serviceAccountKey.json
+model/firebase_data.json
