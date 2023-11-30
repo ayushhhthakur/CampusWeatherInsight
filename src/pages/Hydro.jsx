@@ -30,7 +30,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
-const dataRef = ref(db, 'UsersData/xj6rVWQ2MWgvjqgGTv6U9jsXyto2');
+const dataRef = ref(db, 'UsersData');
 
 const Hydro = () => {
   const [loading, setLoading] = useState(true);
