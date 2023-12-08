@@ -1,6 +1,46 @@
+/* Homepage.css */
+
 .weather-box {
-border: 2px solid black;
-margin-right: 50%;
-margin-left: 20%;
-padding: 10px;
+    display: flex;
+    background-color: white;
+    width: 500px;
+    margin-left: 200px;
+}
+
+.weather-box-left {
+    flex: 1;
+}
+
+.weather-box-left img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.weather-box-right {
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-box-right-top,
+.weather-box-right-bottom {
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weather-box-right-top h5,
+.weather-box-right-bottom h5 {
+    display: inline-block;
+    margin: 0;
+    margin-right: 80px;
+}
+
+.weather-box-right-top p,
+.weather-box-right-bottom p {
+    display: inline-block;
+    margin: 0;
 }
