@@ -4,12 +4,14 @@ import Header from './components/Header';
 import Home from './Pages/Home';
 import Weather from './Pages/Weather'
 import Hydro from './Pages/Hydro'
+import Bar from './components/Bar';
 
 function App() {
   return (
       <Router>
         <div className="App">
           <Header />
+          <Bar/>
           <div className="content">
             <Routes>
               <Route path="/" element={<Home />} />

@@ -39,21 +39,6 @@ const Weather = () => {
   }, []);
 
 
-  const [currentDate, setCurrentDate] = useState('');
-
-  useEffect(() => {
-    const formatCurrentDate = (date) => {
-      const day = date.getDate();
-      const month = date.getMonth() + 1;
-      const year = date.getFullYear();
-      return `${day}/${month}/${year}`;
-    };
-
-    const now = new Date();
-
-    setCurrentDate(formatCurrentDate(now));
-  }, []);
-
   let bgColor;
 
   if(weatherData.temp <= 0) {
@@ -105,7 +90,7 @@ const Weather = () => {
         textAlign: 'center', 
         paddingTop: '30px',
         }}>
-        Weather Data: {currentDate}</h2>
+        Current Weather in MIET</h2>
       <div className="dashboard">
         {loading && 
         <>

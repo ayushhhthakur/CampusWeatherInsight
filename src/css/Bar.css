@@ -1,0 +1,42 @@
+.set {
+    margin-top: 20px;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.links {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    /* Center the links horizontally */
+    padding: 0 1rem;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 1rem;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease;
+}
+
+.link:hover {
+    border-bottom: 2px solid grey;
+}
+
+.link.active {
+    border-bottom: 2px solid #000;
+}
+
+
+.hr-line {
+    border: 0.5px solid #3B3C66;
+    margin-top: 20px 0;
+}
