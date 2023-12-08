@@ -1,7 +1,7 @@
 // Homepage.js
 
 import React from 'react';
-import useWeatherData from './weatherApi';
+import useWeatherData from './WeatherAPI';
 import '../css/Homepage.css';
 
 const Homepage = () => {
