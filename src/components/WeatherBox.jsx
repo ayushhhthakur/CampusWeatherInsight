@@ -71,7 +71,7 @@ const WeatherBox = () => {
     <div className="spaced-content">
         <span className="phrase">{weatherCondition}</span>
         <span className="cur-con-weather-card__cta" onClick={gotoWeather}>
-            <span className="text">More Details</span>
+            <a className="text">More Details</a>
             <svg className="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
                 <defs>
                     <path id="a" d="m8.495.505 5 5v.99l-5 5-.99-.99 3.805-3.806L0 6.7V5.3l11.31-.001-3.805-3.804.99-.99z"></path>
