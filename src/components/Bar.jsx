@@ -10,8 +10,8 @@ const Bar = () => {
                 <div className="links">
                     <NavLink to='/login' className="link" activeClassName="active">Yesterday</NavLink>
                     <NavLink to='/weather' className="link" activeClassName="active">Today</NavLink>
-                    <NavLink to='/dashboard' className="link" activeClassName="active">Hourly</NavLink>
-                    <NavLink to='/profile' className="link" activeClassName="active">Air Quality</NavLink>
+                    <NavLink to='/tomorrow' className="link" activeClassName="active">Tomorrow</NavLink>
+                    <NavLink to='/aqi' className="link" activeClassName="active">Air Quality</NavLink>
                     <NavLink to='/settings' className="link" activeClassName="active">Settings</NavLink>
                 </div>
                 <hr className="hr-line" />
