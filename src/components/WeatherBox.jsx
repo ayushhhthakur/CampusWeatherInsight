@@ -19,10 +19,10 @@ const WeatherBox = () => {
     const formattedTime = time.toLocaleTimeString();
 
     let weather_img = rainy;
-    let condition = 'Rainy';
+    let weatherCondition = 'No Data Available';
 
     if (weatherData && weatherData.temp <= 10 && weatherData.cloud_pct >= 50 && weatherData.wind_speed >= 5) {
-        condition = 'Sunny';
+        weatherCondition = 'Sunny';
         weather_img = sunny;
     }
 
@@ -40,7 +40,7 @@ const WeatherBox = () => {
                 {formattedTime}
             </p>
             <div className="forecast-container">
-                <img src={weather_img} alt={condition} className="weather-icon" />
+                <img src={weather_img} alt={weatherCondition} className="weather-icon" />
                 <div className="temp-container">
                     <div className="temp">{weatherData.temp}°<span className="after-temp">C</span></div>
                     <div className="real-feel">
@@ -69,7 +69,7 @@ const WeatherBox = () => {
         </div>
     </div>
     <div className="spaced-content">
-        <span className="phrase">Partly sunny</span>
+        <span className="phrase">{weatherCondition}</span>
         <span className="cur-con-weather-card__cta" onClick={gotoWeather}>
             <span className="text">More Details</span>
             <svg className="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">

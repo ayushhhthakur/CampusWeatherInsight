@@ -9,12 +9,19 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* border-bottom: 2px solid rgb(146, 144, 144); */
     align-items: center;
     width: 50%;
     height: 100%;
     margin: auto;
     padding: 0 1rem;
+}
+
+.links-underline {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-right: 25%;
+    margin-left: 25%;
+    border-bottom: 2px solid rgb(146, 144, 144);
 }
 
 .link {
@@ -39,4 +46,54 @@
 .hr-line {
     border: 0.5px solid #3B3C66;
     margin-top: 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .set {
+        margin-top: 20px;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+    
+    .links {
+        color: black;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+    }
+
+    .links-underline {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        margin-right: 5%;
+        margin-left: 5%;
+        border-bottom: 2px solid rgb(146, 144, 144);
+    }
+    
+    .link {
+        text-decoration: none;
+        color: inherit;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 0.5rem;
+        border-bottom: 2px solid transparent;
+        transition: border-bottom 0.3s ease;
+    }
+    
+    .link:hover {
+        border-bottom: 2px solid grey;
+    }
+    
+    .link.active {
+        border-bottom: 2px solid #000;
+    }
+    
+    .hr-line {
+        border: 0.5px solid #3B3C66;
+        margin-top: 20px;
+    }
+
 }

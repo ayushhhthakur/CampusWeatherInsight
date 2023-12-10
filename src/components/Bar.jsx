@@ -11,10 +11,10 @@ const Bar = () => {
                     <NavLink to='/login' className="link" activeClassName="active">Yesterday</NavLink>
                     <NavLink to='/weather' className="link" activeClassName="active">Today</NavLink>
                     <NavLink to='/tomorrow' className="link" activeClassName="active">Tomorrow</NavLink>
-                    <NavLink to='/aqi' className="link" activeClassName="active">Air Quality</NavLink>
+                    <NavLink to='/aqi' className="link" activeClassName="active">AQI</NavLink>
                     <NavLink to='/settings' className="link" activeClassName="active">Settings</NavLink>
                 </div>
-                <hr className="hr-line" />
+                <div className="links-underline" />
             </div>
         </>
     );
