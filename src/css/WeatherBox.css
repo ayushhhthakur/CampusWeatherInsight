@@ -156,25 +156,9 @@
 }
 
 /* Media query for mobile devices */
-@media screen and (max-width: 600px) {
-    .cur-con-weather-card__body {
-        padding: 15px;
-    }
-
-    .weather-icon {
-        width: 50px;
-        height: 50px;
-    }
-
-    .temp {
-        font-size: 1.5em;
-    }
-
-    .after-temp {
-        font-size: 0.7em;
-    }
-
-    .real-feel {
-        font-size: 0.9em;
+@media screen and (max-width: 768px) {
+    .cur-con-weather-card {
+        margin-right: 10px;
+        margin-left: 10px;
     }
 }
