@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import '../css/Weather.css';
-import Loader from '../elements/Loader'
+import Loader from '../elements/Loader';
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedDate, setSelectedDate] = useState('');
+
+  const { date } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Jammu'; //Fetching data through rapid api for testing. Change to custom api for production.
+      const currentDate = selectedDate || date; // Use selectedDate if available, otherwise use the date from the URL
+      const url = `https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Jammu&date=${currentDate}`;
+
       const options = {
         method: 'GET',
         headers: {
@@ -36,15 +42,16 @@ const Weather = () => {
     };
 
     fetchData();
-  }, []);
+  }, [selectedDate, date]);
+
 
 
   let bgColor;
 
-  if(weatherData.temp <= 0) {
+  if (weatherData.temp <= 0) {
     bgColor = '#a3d5ff';
-  } else if(weatherData.temp <= 15) {
-    bgColor = '#87ceeb';  
+  } else if (weatherData.temp <= 15) {
+    bgColor = '#87ceeb';
   } else {
     bgColor = '#ffe5cc';
   }
@@ -82,21 +89,21 @@ const Weather = () => {
   } else {
     data = "No data available. Maybe the weather is on vacation too!";
   }
-  
+
 
   return (
-    <div className="main_content" style={{backgroundColor: bgColor}}>
-        <h2 style={{
-        textAlign: 'center', 
+    <div className="main_content" style={{ backgroundColor: bgColor }}>
+      <h2 style={{
+        textAlign: 'center',
         paddingTop: '30px',
-        }}>
+      }}>
         Current Weather in MIET</h2>
       <div className="dashboard">
-        {loading && 
-        <>
-        {/* <p className="loading...">Loading Weather Data...</p> */}
-        <p className='loader-container'><Loader/></p>
-        </>
+        {loading &&
+          <>
+            {/* <p className="loading...">Loading Weather Data...</p> */}
+            <p className='loader-container'><Loader /></p>
+          </>
         }
         {error && <p className="error">Error: {error}</p>}
         {Object.keys(weatherData).length > 0 && (
@@ -143,7 +150,7 @@ const Weather = () => {
         }}>
         {data}</h3>
       </div> */}
-            <div className="display-weather-data">
+      <div className="display-weather-data">
         <h3 style={{
           textAlign: 'center',
           paddingTop: '30px',

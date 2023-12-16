@@ -83,9 +83,6 @@
         transition: border-bottom 0.3s ease;
     }
     
-    .link:hover {
-        border-bottom: 2px solid grey;
-    }
     
     .link.active {
         border-bottom: 2px solid #000;

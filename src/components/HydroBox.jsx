@@ -1,21 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import useWeatherData from './WeatherAPI';
 import '../css/WeatherBox.css';
-import Sun from "../assets/icons/sun.svg";
-import Cloud from "../assets/icons/cloud.svg"
-import Rain from "../assets/icons/cloud-rain.svg"
-// import RainHeavy from "../assets/icons/cloud-rain-2.svg"
-// import CloudBigSmall from "../assets/icons/cloud-big-small.svg"
-// import CloudLight from "../assets/icons/cloud-light.svg"
-// import SunCloudRain from "../assets/icons/sun-cloud-rain.svg"
-// import cloud from "../assets/icons/cloud.svg"
-// import cloud from "../assets/icons/cloud.svg"
-// import cloud from "../assets/icons/cloud.svg"
-// import cloud from "../assets/icons/cloud.svg"
-// import cloud from "../assets/icons/cloud.svg"
-// import cloud from "../assets/icons/cloud.svg"
+import sunny from "../assets/icons/sun.svg";
+import rainy from "../assets/icons/sun.svg";
 
-const WeatherBox = () => {
+const HydroBox = () => {
     const { weatherData, loading, error } = useWeatherData();
     const [time, setTime] = useState(new Date());
 
@@ -29,25 +18,19 @@ const WeatherBox = () => {
 
     const formattedTime = time.toLocaleTimeString();
 
-    let weather_img = null;
+    let weather_img = rainy;
     let weatherCondition = 'No Data Available';
 
-    if (weatherData && weatherData.temp <= 20 && weatherData.cloud_pct >= 50) {
-        weatherCondition = 'Rainy';
-        weather_img = Rain;
-    } else if (weatherData && weatherData.temp <= 20 && weatherData.cloud_pct >= 10) {
-        weatherCondition = 'Cloudy';
-        weather_img = Cloud;
-    } else if (weatherData && weatherData.temp <= 20 && weatherData.cloud_pct < 10) {
-        weatherCondition = 'Sunny'; 
-        weather_img = Sun;
+    if (weatherData && weatherData.temp <= 10 && weatherData.cloud_pct >= 50 && weatherData.wind_speed >= 5) {
+        weatherCondition = 'Sunny';
+        weather_img = sunny;
     }
 
-    const gotoWeather = () => {
-        window.location.href = '/weather';
+    const gotoHydro = () => {
+        window.location.href = '/hydrophonic';
     };
   return (
-    <a className="cur-con-weather-card card-module content-module lbar-panel" onClick={gotoWeather} style={{ cursor: 'pointer' }}>
+    <a className="cur-con-weather-card card-module content-module lbar-panel" onClick={gotoHydro} style={{ cursor: 'pointer' }}>
     <div className="cur-con-weather-card__body">
         <div className="cur-con-weather-card__panel">
             <h2 className="cur-con-weather-card__title">
@@ -69,25 +52,25 @@ const WeatherBox = () => {
         <div className="cur-con-weather-card__panel details-container">
             <div className="spaced-content detail">
                 <span className="label">RealFeel </span>
-                <span className="value">{weatherData.feels_like}°C</span>
+                <span className="value">{weatherData.feels_like}°</span>
             </div>
             <div className="spaced-content detail">
                 <span className="label">Clouds </span>
                 <span className="value">{weatherData.cloud_pct}%</span>
             </div>
             <div className="spaced-content detail">
-                <span className="label">Hyumdity</span>
-                <span className="value">{weatherData.humidity}%</span>
+                <span className="label">Wind</span>
+                <span className="value">{weatherData.wind_speed} km/h</span>
             </div>
             <div className="spaced-content detail">
-                <span className="label">Wind</span>
-                <span className="value">{weatherData.wind_speed}km/h</span>
+                <span className="label">Wind Gusts</span>
+                <span className="value">{weatherData.wind_speed} km/h</span>
             </div>
         </div>
     </div>
     <div className="spaced-content">
         <span className="phrase">{weatherCondition}</span>
-        <span className="cur-con-weather-card__cta" onClick={gotoWeather}>
+        <span className="cur-con-weather-card__cta" onClick={gotoHydro}>
             <a className="text">More Details</a>
             <svg className="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
                 <defs>
@@ -101,4 +84,4 @@ const WeatherBox = () => {
   )
 }
 
-export default WeatherBox
+export default HydroBox

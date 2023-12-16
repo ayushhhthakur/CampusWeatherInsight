@@ -161,4 +161,19 @@
         margin-right: 10px;
         margin-left: 10px;
     }
+
+    .details-container {
+        display: none;
+    }
+
+    .forecast-container {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .weather-icon {
+        margin-right: 0;
+        width: 80px;
+        height: 100px;
+    }
 }
