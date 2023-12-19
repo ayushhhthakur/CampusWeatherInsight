@@ -1,19 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import useWeatherData from './WeatherAPI';
 import '../css/WeatherBox.css';
-import Sun from "../assets/icons/sun.svg";
-import Cloud from "../assets/icons/cloud.svg"
-import Rain from "../assets/icons/cloud-rain.svg"
-// import RainHeavy from "../assets/icons/cloud-rain-2.svg"
-// import CloudBigSmall from "../assets/icons/cloud-big-small.svg"
-// import CloudLight from "../assets/icons/cloud-light.svg"
-// import SunCloudRain from "../assets/icons/sun-cloud-rain.svg"
-// import cloud from "../assets/icons/cloud.svg"
-// import cloud from "../assets/icons/cloud.svg"
-// import cloud from "../assets/icons/cloud.svg"
-// import cloud from "../assets/icons/cloud.svg"
-// import cloud from "../assets/icons/cloud.svg"
-// import cloud from "../assets/icons/cloud.svg"
+import { getWeatherCondition, getWeatherImage } from './Conditions';
 
 const WeatherBox = () => {
     const { weatherData, loading, error } = useWeatherData();
@@ -29,19 +17,9 @@ const WeatherBox = () => {
 
     const formattedTime = time.toLocaleTimeString();
 
-    let weather_img = null;
-    let weatherCondition = 'No Data Available';
+    const weatherCondition = getWeatherCondition(weatherData.temp, weatherData.cloud_pct);
+    const weather_img = getWeatherImage(weatherData.temp, weatherData.cloud_pct);
 
-    if (weatherData && weatherData.temp <= 20 && weatherData.cloud_pct >= 50) {
-        weatherCondition = 'Rainy';
-        weather_img = Rain;
-    } else if (weatherData && weatherData.temp <= 20 && weatherData.cloud_pct >= 10) {
-        weatherCondition = 'Cloudy';
-        weather_img = Cloud;
-    } else if (weatherData && weatherData.temp <= 20 && weatherData.cloud_pct < 10) {
-        weatherCondition = 'Sunny'; 
-        weather_img = Sun;
-    }
 
     const gotoWeather = () => {
         window.location.href = '/weather';

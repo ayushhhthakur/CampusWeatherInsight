@@ -1,46 +1,59 @@
-function getWeatherImage(weatherData) {
-    if (weatherData.temp <= 5) {
-        return require('../assets/icons/1.svg');
-    } else if (weatherData.temp <= 10) {
-        if (weatherData.cloud_pct <= 5) {
-            if (weatherData.wind_speed <= 5) {
-                return require('../assets/icons/1.svg');
-            } else if (weatherData.wind_speed <= 10) {
-                return require('../assets/icons/2.svg');
-            } else if (weatherData.wind_speed <= 15) {
-                return require('../assets/icons/3.svg');
-            } else if (weatherData.wind_speed <= 20) {
-                return require('../assets/icons/4.svg');
-            } else if (weatherData.wind_speed <= 25) {
-                return require('../assets/icons/5.svg');
-            } else if (weatherData.wind_speed <= 30) {
-                return require('../assets/icons/6.svg');
-            } else if (weatherData.wind_speed <= 35) {
-                return require('../assets/icons/7.svg');
-            } else if (weatherData.wind_speed <= 40) {
-                return require('../assets/icons/8.svg');
-            } else if (weatherData.wind_speed <= 45) {
-                return require('../assets/icons/9.svg');
-            } else if (weatherData.wind_speed <= 50) {
-                return require('../assets/icons/10.svg');
-            } else if (weatherData.wind_speed <= 55) {
-                return require('../assets/icons/11.svg');
-            } else if (weatherData.wind_speed <= 60) {
-                return require('../assets/icons/12.svg');
-            } else if (weatherData.wind_speed <= 65) {
-                return require('../assets/icons/13.svg');
-            } else if (weatherData.wind_speed <= 70) {
-                return require('../assets/icons/14.svg');
-            }
-        }
-    } else if (weatherData.temp <= 25 && weatherData.cloud_pct <= 5 && weatherData.wind_speed <= 5) {
-        return require('../assets/icons/15.svg');
+// Conditions.js
+
+import Sun from "../assets/icons/sun.svg";
+import Cloud from "../assets/icons/cloud.svg";
+import Rain from "../assets/icons/cloud-rain.svg";
+import sunCloudBig from "../assets/icons/sun-cloud-big.svg"
+import sunCloud from "../assets/icons/sun-cloud.svg"
+// import cloudRain from "../assets/icons/cloud-rain.svg"
+import cloudRain2 from "../assets/icons/cloud-rain-2.svg"
+// import CloudBigSmall from "../assets/icons/cloud-big-small.svg"
+// import CloudLight from "../assets/icons/cloud-light.svg"
+// import SunCloudRain from "../assets/icons/sun-cloud-rain.svg"
+import Rain2 from "../assets/icons/cloud-rain-2.svg"
+// import cloud from "../assets/icons/cloud.svg"
+// import cloud from "../assets/icons/cloud.svg"
+
+const getWeatherCondition = (temp, cloud_pct) => {
+    if (temp <= 35 && cloud_pct <= 5) {
+        return 'Sunny';
+    } else if (temp <= 30 && cloud_pct <= 5) {
+        return 'Sunny';
+    } else if (temp <= 25 && cloud_pct <= 5) {
+        return 'Sunny';
+    } else if (temp <= 20 && cloud_pct <= 5) {
+        return 'Sunny';
+    } else if (temp <= 15 && cloud_pct <= 5) {
+        return 'Sunny';
+    } 
+    else {
+        return 'No Data Available';
     }
-    // Add more conditions as needed...
+};
 
-    // Default case
-    return require('../default-icon.svg');
-}
+const getWeatherImage = (temp, cloud_pct) => {
+    if (temp >= 35 && cloud_pct >= 0) {
+        return Sun;
+    } else if (temp <= 30 && cloud_pct <= 5) {
+        return Sun;
+    } else if (temp <= 25 && cloud_pct <= 5) {
+        return Sun;
+    } else if (temp <= 20 && cloud_pct <= 5) {
+        return Sun;
+    } else if (temp <= 15 && cloud_pct <= 5) {
+        return Sun;
+    } else if (temp <= 25 && cloud_pct <= 20 ) {
+        return sunCloudBig;
+    } else if (temp <= 25 && cloud_pct <= 50) {
+        return sunCloud
+    } else if (temp <= 20 && cloud_pct <= 100) {
+        return Cloud
+    } else if (temp <= 10 && cloud_pct <= 100) {
+        return Rain2
+    }
+    else {
+        return null;
+    }
+};
 
-// Example usage
-const weather_img = getWeatherImage(weatherData);
+export { getWeatherCondition, getWeatherImage };
