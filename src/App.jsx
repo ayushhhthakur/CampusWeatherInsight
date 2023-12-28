@@ -5,6 +5,8 @@ import Home from './Pages/Home';
 import Weather from './Pages/Weather'
 import Hydro from './Pages/Hydro'
 import Bar from './components/Bar';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/weather" element={<Weather />} />
-              <Route path="/hydrophonic" element={<Hydro />} />
+              <Route path="/hydro" element={<Hydro />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
             </Routes>
           </div>
           {/* <Footer /> */}
