@@ -61,7 +61,6 @@ const Hydro = () => {
 
   return (
     <div className="main-content">
-      <h1>Hydrophonic</h1>
       <div className="hydro-dashboard">
         {loading && <p className="loading... loader-container"><Loader /></p>}
         {error && <p className="error">Error: {error}</p>}
