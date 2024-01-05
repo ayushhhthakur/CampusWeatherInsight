@@ -7,6 +7,11 @@ import Hydro from './Pages/Hydro'
 import Bar from './components/Bar';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
+import Analytics from './components/Analytics';
+import ComingSoon from './components/ComingSoon';
+import NotFound from './components/NotFound';
+import Forecast from './components/Forecast';
+import AQI from './components/AQI';
 
 function App() {
   return (
@@ -19,6 +24,11 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/weather" element={<Weather />} />
               <Route path="/hydro" element={<Hydro />} />
+              <Route path="/analytics" element={<Analytics />} />
+              <Route path="/forecast" element={<Forecast />} />
+              <Route path="/comingsoon" element={<ComingSoon />} />\
+              <Route path="/aqi" element={<AQI />} />
+              <Route path="/*" element={<NotFound />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
             </Routes>
