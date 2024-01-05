@@ -71,7 +71,7 @@ const Analytics = () => {
         <canvas id="myChart" style={
             {
                 width: '100%',
-                height: '600px'
+                height: '400px'
             }
         }></canvas>
       </div>
