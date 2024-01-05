@@ -67,9 +67,7 @@ const Analytics = () => {
 
   return (
     <div>
-      <div>
-        <canvas id="myChart"></canvas>
-      </div>
+      <canvas id="myChart" style={{ display: 'block', boxSizing: 'border-box', height: '393px', width: '786px' }}></canvas>
     </div>
   );
 }
