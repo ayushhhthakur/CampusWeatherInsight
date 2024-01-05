@@ -68,12 +68,7 @@ const Analytics = () => {
   return (
     <div>
       <div>
-        <canvas id="myChart" style={
-          {
-            width: '10px',
-            height: '80px'
-          }
-        }></canvas>
+        <canvas id="myChart"></canvas>
       </div>
     </div>
   );
