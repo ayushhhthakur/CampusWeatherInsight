@@ -27,14 +27,14 @@ const HydroBox = () => {
     }
 
     const gotoHydro = () => {
-        window.location.href = '/hydrophonic';
+        window.location.href = '/hydro';
     };
   return (
     <a className="cur-con-weather-card card-module content-module lbar-panel" onClick={gotoHydro} style={{ cursor: 'pointer' }}>
     <div className="cur-con-weather-card__body">
         <div className="cur-con-weather-card__panel">
             <h2 className="cur-con-weather-card__title">
-                Current Weather
+                Hydrophonic Data
             </h2>
             <p className="cur-con-weather-card__subtitle">
                 {formattedTime}
