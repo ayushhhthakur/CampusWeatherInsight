@@ -44,18 +44,6 @@ const Weather = () => {
     fetchData();
   }, [selectedDate, date]);
 
-
-
-  let bgColor;
-
-  if (weatherData.temp <= 0) {
-    bgColor = '#a3d5ff';
-  } else if (weatherData.temp <= 15) {
-    bgColor = '#87ceeb';
-  } else {
-    bgColor = '#ffe5cc';
-  }
-
   let data;
 
   if (weatherData.temp <= 0 && weatherData.cloud_pct >= 5) {
@@ -92,7 +80,7 @@ const Weather = () => {
 
 
   return (
-    <div className="main_content" style={{ backgroundColor: bgColor }}>
+    <div className="main_content">
       <h2 style={{
         textAlign: 'center',
         paddingTop: '30px',
