@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, onValue } from 'firebase/database';
-import '../css/Hydro.css'; // Replace with your actual path
-import Loader from '../elements/Loader'; // Replace with your actual path
+import '../css/Hydro.css';
+import Loader from '../elements/Loader'; 
 
 const Hydro = () => {
   const [data, setData] = useState(null);
@@ -30,11 +30,11 @@ const Hydro = () => {
         onValue(dataRef, (snapshot) => {
           const firebaseData = snapshot.val();
           setData(firebaseData);
-          setError(null); // Reset error state on successful data fetch
+          setError(null);
         });
       } catch (error) {
         console.error('Error fetching data:', error);
-        setError('Error fetching data. Please try again.'); // Set error state on data fetch error
+        setError('Error fetching data. Please try again.');
       } finally {
         setLoading(false);
       }

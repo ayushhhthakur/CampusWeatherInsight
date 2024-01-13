@@ -15,21 +15,29 @@ import Rain2 from "../assets/icons/cloud-rain-2.svg"
 // import cloud from "../assets/icons/cloud.svg"
 
 const getWeatherCondition = (temp, cloud_pct) => {
-    if (temp <= 35 && cloud_pct <= 5) {
-        return 'Sunny';
-    } else if (temp <= 30 && cloud_pct <= 5) {
-        return 'Sunny';
-    } else if (temp <= 25 && cloud_pct <= 5) {
-        return 'Sunny';
-    } else if (temp <= 20 && cloud_pct <= 5) {
-        return 'Sunny';
-    } else if (temp <= 15 && cloud_pct <= 5) {
-        return 'Sunny';
-    } 
-    else {
-        return 'No Data Available';
+    if (cloud_pct == 0) {
+        return getWeatherCategory(temp);
+    } else if (cloud_pct <= 5) {
+        return getWeatherCategory(temp);
+    } else if (cloud_pct >= 10 && cloud_pct <= 50) {
+        return getWeatherCategory(temp);
+    } else if (cloud_pct >= 50) {
+        return getWeatherCategory(temp);
+    } else if (cloud_pct >= 90) {
+        return getWeatherCategory(temp);
     }
 };
+
+const getWeatherCategory = (temp) => {
+    if (temp >= 30) return 'Hot';
+    if (temp >= 25) return 'Warm';
+    if (temp >= 20) return 'Mild Weather';
+    if (temp >= 15) return 'Cool Weather';
+    if (temp >= 10) return 'Chill Weather';
+    if (temp >= 5) return 'Cold Outside';
+    if (temp >= 0) return 'Very Cold';
+}
+
 
 const getWeatherImage = (temp, cloud_pct) => {
     if (temp >= 35 && cloud_pct >= 0) {
