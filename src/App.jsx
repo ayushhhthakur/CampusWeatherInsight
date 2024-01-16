@@ -12,6 +12,7 @@ import ComingSoon from './components/ComingSoon';
 import NotFound from './components/NotFound';
 import Forecast from './components/Forecast';
 import AQI from './components/AQI';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
               <Route path="/register" element={<Register />} />
             </Routes>
           </div>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </Router>
   );

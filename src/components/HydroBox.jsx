@@ -51,19 +51,19 @@ const HydroBox = () => {
         </div>
         <div className="cur-con-weather-card__panel details-container">
             <div className="spaced-content detail">
-                <span className="label">RealFeel </span>
+                <span className="label">Nitrogen Value </span>
                 <span className="value">{weatherData.feels_like}°</span>
             </div>
             <div className="spaced-content detail">
-                <span className="label">Clouds </span>
+                <span className="label">PH Value </span>
                 <span className="value">{weatherData.cloud_pct}%</span>
             </div>
             <div className="spaced-content detail">
-                <span className="label">Wind</span>
+                <span className="label">Nutrient Level</span>
                 <span className="value">{weatherData.wind_speed} km/h</span>
             </div>
             <div className="spaced-content detail">
-                <span className="label">Wind Gusts</span>
+                <span className="label">Potassium Level</span>
                 <span className="value">{weatherData.wind_speed} km/h</span>
             </div>
         </div>

@@ -29,8 +29,8 @@ const getWeatherCondition = (temp, cloud_pct) => {
 };
 
 const getWeatherCategory = (temp) => {
-    if (temp >= 30) return 'Hot';
-    if (temp >= 25) return 'Warm';
+    if (temp >= 30) return 'Hot Outside';
+    if (temp >= 25) return 'Warm Weather';
     if (temp >= 20) return 'Mild Weather';
     if (temp >= 15) return 'Cool Weather';
     if (temp >= 10) return 'Chill Weather';
@@ -50,6 +50,8 @@ const getWeatherImage = (temp, cloud_pct) => {
         return Sun;
     } else if (temp <= 15 && cloud_pct <= 5) {
         return Sun;
+    } else if (temp <= 15 && cloud_pct <= 20) {
+        return sunCloudBig;
     } else if (temp <= 25 && cloud_pct <= 20 ) {
         return sunCloudBig;
     } else if (temp <= 25 && cloud_pct <= 50) {
