@@ -7,7 +7,7 @@ const Homepage = () => {
     <>
     <WeatherBox/>
     <br/>
-    <HydroBox />
+{/*     <HydroBox /> */}
     </>
   )
 }
