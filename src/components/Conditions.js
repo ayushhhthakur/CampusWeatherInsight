@@ -14,6 +14,11 @@ import Rain2 from "../assets/icons/cloud-rain-2.svg"
 // import cloud from "../assets/icons/cloud.svg"
 // import cloud from "../assets/icons/cloud.svg"
 
+// const toLocaleTimeString = (time) => {
+//     const date = new Date(time * 1000);
+//     return date.toLocaleTimeString();
+// }
+
 const getWeatherCondition = (temp, cloud_pct) => {
     if (cloud_pct == 0) {
         return getWeatherCategory(temp);

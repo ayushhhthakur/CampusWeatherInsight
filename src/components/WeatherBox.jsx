@@ -15,7 +15,10 @@ const WeatherBox = () => {
         return () => clearInterval(intervalId);
     }, []);
 
-    const formattedTime = time.toLocaleTimeString();
+    // const formattedTime = time.toLocaleTimeString();
+
+    const formattedTime = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
+
 
     const weatherCondition = getWeatherCondition(weatherData.temp, weatherData.cloud_pct);
     const weather_img = getWeatherImage(weatherData.temp, weatherData.cloud_pct);

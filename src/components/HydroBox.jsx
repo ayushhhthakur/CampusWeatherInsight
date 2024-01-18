@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import useWeatherData from './WeatherAPI';
 import '../css/WeatherBox.css';
-import sunny from "../assets/icons/sun.svg";
-import rainy from "../assets/icons/sun.svg";
+import { getWeatherCondition, getWeatherImage } from './Conditions';
+
 
 const HydroBox = () => {
     const { weatherData, loading, error } = useWeatherData();
@@ -18,13 +18,8 @@ const HydroBox = () => {
 
     const formattedTime = time.toLocaleTimeString();
 
-    let weather_img = rainy;
-    let weatherCondition = 'No Data Available';
-
-    if (weatherData && weatherData.temp <= 10 && weatherData.cloud_pct >= 50 && weatherData.wind_speed >= 5) {
-        weatherCondition = 'Sunny';
-        weather_img = sunny;
-    }
+    const weatherCondition = getWeatherCondition(weatherData.temp, weatherData.cloud_pct);
+    const weather_img = getWeatherImage(weatherData.temp, weatherData.cloud_pct);
 
     const gotoHydro = () => {
         window.location.href = '/hydro';
