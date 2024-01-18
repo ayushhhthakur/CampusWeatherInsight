@@ -2,7 +2,33 @@ import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import '../css/Hydro.css';
-import Loader from '../elements/Loader'; 
+import Loader from '../elements/Loading';
+import Loader2 from '../elements/Loader';
+// import SnowLoader from '../elements/SnowLoader';
+
+// Error boundary component
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error('Error caught by error boundary:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <p className="error">An error occurred. Please try again.</p>;
+    }
+
+    return this.props.children;
+  }
+}
 
 const Hydro = () => {
   const [data, setData] = useState(null);
@@ -12,13 +38,7 @@ const Hydro = () => {
   useEffect(() => {
     const fetchData = async () => {
       const firebaseConfig = {
-        apiKey: "AIzaSyApmcGF1t-mS3gqwb_cy08wUl9hQqLcinE",
-        authDomain: "hydrophonic-86c7e.firebaseapp.com",
-        databaseURL: "https://hydrophonic-86c7e-default-rtdb.firebaseio.com",
-        projectId: "hydrophonic-86c7e",
-        storageBucket: "hydrophonic-86c7e.appspot.com",
-        messagingSenderId: "226532801545",
-        appId: "1:226532801545:web:6fcfe119e973c75c078cd8"
+        // Your Firebase config
       };
 
       const firebaseApp = initializeApp(firebaseConfig);
@@ -44,53 +64,36 @@ const Hydro = () => {
   }, []);
 
   return (
-    <div className='main_content'>
-      <h2 style={{
-        textAlign: 'center',
-        paddingTop: '30px',
-      }}>
-        Hydroponic Data
-      </h2>
-      <div className="dashboard">
-        {loading && (
-          <p className='loader-container'><Loader /></p>
-        )}
-        {error && <p className="error">Error: {error}</p>}
-        {data && (
-          <div className='hydro-data'>
-            <div className='data-row'>
-              <div className='data-column'>
-                <p>Humidity: {data.Humidity}</p>
-              </div>
-              <div className='data-column'>
-                <p>Nitrogen Value: {data['Nitrogen Value']}</p>
-              </div>
-              <div className='data-column'>
-                <p>Nutrient Level: {data['Nutrient Level']}</p>
-              </div>
-              <div className='data-column'>
-                <p>PH Value: {data['PH Value']}</p>
-              </div>
-              <div className='data-column'>
-                <p>Phosphorous Value: {data['Phosphorous Value']}</p>
-              </div>
-              <div className='data-column'>
-                <p>Potassium Value: {data['Potassium Value']}</p>
-              </div>
-              <div className='data-column'>
-                <p>Temperature: {data.Temperature}</p>
-              </div>
-              <div className='data-column'>
-                <p>Time: {data.Time}</p>
-              </div>
-              <div className='data-column'>
-                <p>Timestamp: {data.Timestamp}</p>
+    <ErrorBoundary>
+      <div className='main_content'>
+        <h2 style={{
+          textAlign: 'center',
+          paddingTop: '30px',
+        }}>
+          Hydroponic Data
+        </h2>
+        <div className="dashboard">
+          {loading && (
+            <>
+            <p className='loader-container'><Loader2 /></p>
+            {/* <p className='loader-container'><Loader /></p> */}
+            </>
+          )}
+          {error && <p className="error">Error: {error}</p>}
+          {Object.keys(data || {}).length > 0 && (
+            <div className='hydro-data'>
+              <div className='data-row'>
+                {Object.entries(data).map(([key, value]) => (
+                  <div key={key} className='data-column'>
+                    <p>{key}: {value}</p>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
-    </div>
+    </ErrorBoundary>
   );
 };
 
