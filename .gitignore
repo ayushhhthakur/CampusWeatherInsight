@@ -25,3 +25,5 @@ dist-ssr
 
 .env
 src/Pages/Sample
+src/components/data.json
+src/components/WeatherAPI.js

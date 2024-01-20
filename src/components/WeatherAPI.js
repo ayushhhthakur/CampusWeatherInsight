@@ -42,3 +42,4 @@ const useWeatherData = () => {
 };
 
 export default useWeatherData;
+
