@@ -37,16 +37,32 @@ const Hydro = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const firebaseConfig = {
-        // Your Firebase config
-      };
-
-      const firebaseApp = initializeApp(firebaseConfig);
-      const db = getDatabase(firebaseApp);
-      const dataRef = ref(db, 'UsersData');
-
       try {
         setLoading(true);
+    
+        const firebaseConfig = {
+          apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+          authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+          databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+          projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+          storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+          messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+          appId: process.env.REACT_APP_FIREBASE_APP_ID,
+        };
+    
+        // Ensure all required environment variables are available
+        const missingEnvVariables = Object.keys(firebaseConfig).filter(
+          key => !firebaseConfig[key]
+        );
+        
+        if (missingEnvVariables.length > 0) {
+          throw new Error(`Missing environment variables: ${missingEnvVariables.join(', ')}`);
+        }
+    
+        const firebaseApp = initializeApp(firebaseConfig);
+        const db = getDatabase(firebaseApp);
+        const dataRef = ref(db, 'UsersData');
+    
         onValue(dataRef, (snapshot) => {
           const firebaseData = snapshot.val();
           setData(firebaseData);
@@ -59,6 +75,7 @@ const Hydro = () => {
         setLoading(false);
       }
     };
+
 
     fetchData();
   }, []);
@@ -75,8 +92,8 @@ const Hydro = () => {
         <div className="dashboard">
           {loading && (
             <>
-            <p className='loader-container'><Loader2 /></p>
-            {/* <p className='loader-container'><Loader /></p> */}
+              <p className='loader-container'><Loader2 /></p>
+              {/* <p className='loader-container'><Loader /></p> */}
             </>
           )}
           {error && <p className="error">Error: {error}</p>}
