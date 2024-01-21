@@ -72,8 +72,19 @@
 .details-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
 }
+
+.details-container .label {
+    order: 1;
+    margin-right: 10px;
+}
+
+.details-container .value {
+    order: 2;
+}
+
 
 .spaced-content,
 .detail {
@@ -116,26 +127,25 @@
     font-size: 0.9em;
 }
 
-.text:hover {
+.text {
+    position: relative;
     color: #009688;
+    text-decoration: none; /* Remove default underline */
 }
 
 .text::before {
-    content: "";
+    content: '';
     position: absolute;
-    width: 18%;
-    height: 2px;
     bottom: 0;
-    right: 30px;
+    left: 0;
+    width: 0;
+    height: 2px; /* Set the thickness of the underline */
     background-color: #009688;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out;
+    transition: width 0.3s ease; /* Adjust the duration and easing as needed */
 }
 
 .text:hover::before {
-    visibility: visible;
-    transform: scaleX(1);
+    width: 100%;
 }
 
 .phrase {
@@ -154,6 +164,16 @@
 .icon-arrow {
     margin-left: 5px;
     fill: #009688;
+}
+
+button {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
 }
 
 /* Media query for mobile devices */
