@@ -40,7 +40,7 @@ const WeatherBox = () => {
                     <div className="forecast-container">
                         <img src={weather_img} alt={weatherCondition} className="weather-icon" />
                         <div className="temp-container">
-                            <div className="temp">{weatherData.temp}°<span className="after-temp">C</span></div>
+                            <div className="temp"><span>{weatherData.temp}°</span><span className="after-temp">C</span></div>
                             <div className="real-feel">
                                 RealFeel® {weatherData.feels_like}°
                             </div>
