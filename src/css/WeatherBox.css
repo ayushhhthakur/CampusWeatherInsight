@@ -55,6 +55,10 @@
     flex-direction: column;
 }
 
+.temp-container span {
+    font-weight: 300;
+}
+
 .temp {
     font-size: 2em;
     font-weight: bold;
