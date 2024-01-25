@@ -1,15 +1,14 @@
-import React from 'react'
-import WeatherBox from './WeatherBox'
-import HydroBox from './HydroBox'
+import React from 'react';
+import WeatherBox from './WeatherBox';
+import HydroBox from './HydroBox';
 
 const Homepage = () => {
   return (
     <>
-    <WeatherBox/>
-    <br/>
-{/*     <HydroBox /> */}
+      <WeatherBox />
+      <HydroBox />
     </>
-  )
-}
+  );
+};
 
-export default Homepage
+export default Homepage;
