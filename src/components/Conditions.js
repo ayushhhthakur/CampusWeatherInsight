@@ -97,7 +97,10 @@ const getWeatherImage = (temp, cloud_pct) => {
             return sunCloud;
         } else if (temp <= 20 && cloud_pct <= 100) {
             return sunCloudBig;
-        } else if (temp <= 10 && cloud_pct <= 100) {
+        } else if (temp <= 15 && cloud_pct <=100) {
+            return sunCloud;
+        }
+        else if (temp <= 10 && cloud_pct <= 100) {
             return Rain2;
         } else {
             return null;
@@ -113,6 +116,8 @@ const getWeatherImage = (temp, cloud_pct) => {
             return MoonClouds;
         } else if (temp <= 10 && cloud_pct <= 80) {
             return MoonCloudBig;
+        } else if (temp <= 15 && cloud_pct <= 100) {
+            return MoonClouds
         } else if (temp <= 10 && cloud_pct <= 100) {
             return MoonCloudBig2;
         } else {
