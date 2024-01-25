@@ -23,7 +23,6 @@ const WeatherBox = () => {
     const weatherCondition = getWeatherCondition(weatherData.temp, weatherData.cloud_pct);
     const weather_img = getWeatherImage(weatherData.temp, weatherData.cloud_pct);
 
-
     const gotoWeather = () => {
         window.location.href = '/weather';
     };
