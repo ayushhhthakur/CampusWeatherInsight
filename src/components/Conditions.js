@@ -78,7 +78,7 @@ const getWeatherImage = (temp, cloud_pct) => {
         } else if (temp <= 25 && cloud_pct <= 50) {
             return sunCloud;
         } else if (temp <= 20 && cloud_pct <= 100) {
-            return Cloud;
+            return sunCloudBig;
         } else if (temp <= 10 && cloud_pct <= 100) {
             return Rain2;
         } else {
