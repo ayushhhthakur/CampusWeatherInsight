@@ -47,6 +47,20 @@ const getWeatherCondition = (temp, cloud_pct) => {
     }
 };
 
+const getHyrdoCondition = (temp, cloud_pct) => {
+    if (cloud_pct === 0) {
+        return gethydroCategory(temp);
+    } else if (cloud_pct <= 5) {
+        return gethydroCategory(temp);
+    } else if (cloud_pct >= 10 && cloud_pct <= 50) {
+        return gethydroCategory(temp);
+    } else if (cloud_pct >= 50) {
+        return gethydroCategory(temp);
+    } else if (cloud_pct >= 90) {
+        return gethydroCategory(temp);
+    }
+};
+
 const getWeatherCategory = (temp) => {
     if (temp >= 30) return 'Hot Outside';
     if (temp >= 25) return 'Warm Weather';
@@ -56,6 +70,10 @@ const getWeatherCategory = (temp) => {
     if (temp >= 5) return 'Cold Outside';
     if (temp >= 0) return 'Very Cold';
 };
+
+const gethydroCategory = (temp) => {
+    if (temp <= 30) return 'NO DATA AVAILABLE';
+}
 
 const getWeatherImage = (temp, cloud_pct) => {
     const isDay = isDaytime();
@@ -103,4 +121,4 @@ const getWeatherImage = (temp, cloud_pct) => {
     }
 };
 
-export { getWeatherCondition, getWeatherImage };
+export { getWeatherCondition, getWeatherImage, getHyrdoCondition };
