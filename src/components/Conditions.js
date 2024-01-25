@@ -13,14 +13,28 @@ import cloudRain2 from "../assets/icons/cloud-rain-2.svg"
 import Rain2 from "../assets/icons/cloud-rain-2.svg"
 // import cloud from "../assets/icons/cloud.svg"
 // import cloud from "../assets/icons/cloud.svg"
+import Moon from "../assets/icons/moon.svg"
+import MoonCloud from "../assets/icons/moon-cloud.svg"
+import MoonClouds from "../assets/icons/moon-clouds.svg"
+import MoonCloudBig from "../assets/icons/moon-cloud-big.svg"
+import MoonCloudBig2 from "../assets/icons/moon-cloud-big-2.svg"
+// import MoonCloudFog from "../assets/icons/moon-cloud-fog.svg"
+// import MoonCloudRain from "../assets/icons/moon-cloud-rain.svg"
+// import MoonCloudRainBig from "../assets/icons/moon-cloud-rain-big.svg"
+// import MoonCloudLight from "../assets/icons/moon-cloud-light.svg"
+// import MoonCloudLightBig from "../assets/icons/moon-cloud-light-big.svg"
+// import MoonCloudSnow from "../assets/icons/moon-cloud-snow.svg"
+// import MoonCloudSnowHeavy from "../assets/icons/moon-cloud-snow-heavy.svg"
 
-// const toLocaleTimeString = (time) => {
-//     const date = new Date(time * 1000);
-//     return date.toLocaleTimeString();
-// }
+const isDaytime = () => {
+    const currentTime = new Date().getHours();
+    return currentTime >= 5 && currentTime < 20;
+};
 
 const getWeatherCondition = (temp, cloud_pct) => {
-    if (cloud_pct == 0) {
+    const isDay = isDaytime();
+
+    if (cloud_pct === 0) {
         return getWeatherCategory(temp);
     } else if (cloud_pct <= 5) {
         return getWeatherCategory(temp);
@@ -41,33 +55,51 @@ const getWeatherCategory = (temp) => {
     if (temp >= 10) return 'Chill Weather';
     if (temp >= 5) return 'Cold Outside';
     if (temp >= 0) return 'Very Cold';
-}
-
+};
 
 const getWeatherImage = (temp, cloud_pct) => {
-    if (temp >= 35 && cloud_pct >= 0) {
-        return Sun;
-    } else if (temp <= 30 && cloud_pct <= 5) {
-        return Sun;
-    } else if (temp <= 25 && cloud_pct <= 5) {
-        return Sun;
-    } else if (temp <= 20 && cloud_pct <= 5) {
-        return Sun;
-    } else if (temp <= 15 && cloud_pct <= 5) {
-        return Sun;
-    } else if (temp <= 15 && cloud_pct <= 20) {
-        return sunCloudBig;
-    } else if (temp <= 25 && cloud_pct <= 20 ) {
-        return sunCloudBig;
-    } else if (temp <= 25 && cloud_pct <= 50) {
-        return sunCloud
-    } else if (temp <= 20 && cloud_pct <= 100) {
-        return Cloud
-    } else if (temp <= 10 && cloud_pct <= 100) {
-        return Rain2
-    }
-    else {
-        return null;
+    const isDay = isDaytime();
+
+    if (isDay) {
+        if (temp >= 35 && cloud_pct >= 0) {
+            return Sun;
+        } else if (temp <= 30 && cloud_pct <= 5) {
+            return Sun;
+        } else if (temp <= 25 && cloud_pct <= 5) {
+            return Sun;
+        } else if (temp <= 20 && cloud_pct <= 5) {
+            return Sun;
+        } else if (temp <= 15 && cloud_pct <= 5) {
+            return Sun;
+        } else if (temp <= 15 && cloud_pct <= 20) {
+            return sunCloudBig;
+        } else if (temp <= 25 && cloud_pct <= 20) {
+            return sunCloudBig;
+        } else if (temp <= 25 && cloud_pct <= 50) {
+            return sunCloud;
+        } else if (temp <= 20 && cloud_pct <= 100) {
+            return Cloud;
+        } else if (temp <= 10 && cloud_pct <= 100) {
+            return Rain2;
+        } else {
+            return null;
+        }
+    } else {
+        if (temp <= 15 && cloud_pct == 0) {
+            return Moon;
+        } else if (temp <= 10 && cloud_pct <= 5) {
+            return MoonCloud;
+        } else if (temp <= 10 && cloud_pct <= 20) {
+            return MoonClouds;
+        } else if (temp <= 15 && cloud_pct <= 50) {
+            return MoonClouds;
+        } else if (temp <= 10 && cloud_pct <= 80) {
+            return MoonCloudBig;
+        } else if (temp <= 10 && cloud_pct <= 100) {
+            return MoonCloudBig2;
+        } else {
+            return null;
+        }
     }
 };
 
