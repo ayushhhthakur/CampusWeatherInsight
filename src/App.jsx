@@ -19,11 +19,7 @@ import Admin from './Pages/Admin';
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(false);
 
-  // Your existing code...
-
   useEffect(() => {
-    // Add your authentication logic here
-    // Example: Check if the user has a valid token
     const token = localStorage.getItem('token');
     const authenticated = token ? true : false;
     setLoggedIn(authenticated);
