@@ -19,7 +19,6 @@ header {
   color: #ecf0f1;
   font-size: 1.5rem;
   display: flex;
-  align-items: center;
 }
 
 .logo-link p {
@@ -29,6 +28,7 @@ header {
 .logo-link span {
   color: #3498db;
 }
+
 
 .header-title {
   flex-grow: 1;
