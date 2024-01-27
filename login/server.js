@@ -1,17 +1,18 @@
+// Login/server.js
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const dotenv = require('dotenv'); // Import dotenv
+const dotenv = require('dotenv');
 
-dotenv.config(); // Load variables from .env file
+dotenv.config();
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 app.use(cors());
 
-// Load users from environment variables
 const users = [
   {
     username: process.env.USER1_USERNAME,
@@ -35,6 +36,5 @@ app.post('/api/login', (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// Export the app for Vercel to use
+module.exports = app;
