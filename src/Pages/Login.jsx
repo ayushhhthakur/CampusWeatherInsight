@@ -1,27 +1,86 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../css/Login.css';
 
-const Login = () => {
-  return (
-    <>
-      <div class="alert alert-primary" role="alert" style={{textAlign: 'center'}}>
-        For Admin Use Only
-      </div>
-      <div className="login">
-        <div className="login-container">
-          <div className="login-form">
-            <form>
-              <h1>Login</h1>
-              <label htmlFor="email">Email</label>
-              <input type="email" name="email" id="email" placeholder="Enter your email" />
-              <label htmlFor="password">Password</label>
-              <input type="password" name="password" id="password" placeholder="Enter your password" />
-              <button type="submit">Login</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </>
-  )
-}
+const Login = ({ setLoggedIn }) => {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
-export default Login
+    // Use the useNavigate hook to get access to the navigate function
+    const navigate = useNavigate();
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+
+        const credentials = {
+            username,
+            password,
+        };
+
+        try {
+            const response = await fetch('http://localhost:5000/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(credentials),
+            });
+
+            if (response.ok) {
+                const { token } = await response.json();
+                localStorage.setItem('token', token);
+                console.log('Login successful');
+                setLoggedIn(true);
+
+                // Use the navigate function to navigate to '/admin'
+                navigate('/admin');
+            } else {
+                console.log('Login failed. Incorrect credentials');
+            }
+        } catch (error) {
+            console.error('Error during login:', error);
+        }
+    };
+
+    return (
+        <>
+            <div className="alert-bar" role="alert" style={{
+                textAlign: 'center',
+                background: 'none',
+                marginBottom: '20px',
+            }}>
+                For Admin Use Only
+            </div>
+            <div className="card-container">
+                <div className="card">
+                  <a className='login'>Login</a>
+                        <div className="inputBox">
+                            <input
+                                type="text"
+                                id="usernameInput"
+                                required="required"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                            />
+                            <span className="user">Username</span>
+                        </div>
+
+                        <div className="inputBox">
+                            <input
+                                type="password"
+                                id="passwordInput"
+                                required="required"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                            <span>Password</span>
+                        </div>
+
+                        <button onClick={handleLogin} className="enter">Enter</button>
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default Login;
