@@ -7,23 +7,38 @@ const Bar = () => {
   return (
     <div className="set">
       <div className="links">
-        <NavLink to="/analytics" className="link" activeClassName="active">
+        <NavLink
+          to="/analytics"
+          className={({ isActive }) => (isActive ? 'link active' : 'link')}
+        >
           Analytics
         </NavLink>
 
-        <NavLink to='/hydro' className="link" activeClassName="active">
+        <NavLink
+          to="/hydro"
+          className={({ isActive }) => (isActive ? 'link active' : 'link')}
+        >
           Hydro
         </NavLink>
 
-        <NavLink to='/' className="link" activeClassName="active">
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? 'link active' : 'link')}
+        >
           Home
         </NavLink>
 
-        <NavLink to='/forecast' className="link" activeClassName="active">
+        <NavLink
+          to="/forecast"
+          className={({ isActive }) => (isActive ? 'link active' : 'link')}
+        >
           Forecast
         </NavLink>
 
-        <NavLink to='/aqi' className="link" activeClassName="active">
+        <NavLink
+          to="/aqi"
+          className={({ isActive }) => (isActive ? 'link active' : 'link')}
+        >
           AQI
         </NavLink>
       </div>
