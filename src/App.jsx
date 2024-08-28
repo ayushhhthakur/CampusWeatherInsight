@@ -13,7 +13,7 @@ import ComingSoon from './components/ComingSoon';
 import NotFound from './components/NotFound';
 import Forecast from './components/Forecast';
 import AQI from './components/AQI';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import Admin from './Pages/Admin';
 
 function App() {
@@ -57,7 +57,7 @@ function App() {
             />
           </Routes>
         </div>
-        <Footer/>
+{/*         <Footer/> */}
       </div>
     </Router>
   );
